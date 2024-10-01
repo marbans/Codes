@@ -1,0 +1,1 @@
+powershell.exe -ExecutionPolicy Bypass -File "C:\Scripts\PapercutSSID.ps1" -WindowStyle Hidden
