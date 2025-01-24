@@ -1,0 +1,25 @@
+# Define the path for the CSV file
+$csvPath = "C:\user_group_memberships_2025.csv"  # Modify the path as needed
+
+# Get all AD users
+$users = Get-ADUser -Filter * -Properties MemberOf
+
+# Prepare an array to store the results
+$results = @()
+
+# Loop through each user and get their group memberships
+foreach ($user in $users) {
+    $userGroups = $user.MemberOf
+    foreach ($group in $userGroups) {
+        $groupName = (Get-ADGroup -Identity $group).Name
+        $results += [PSCustomObject]@{
+            UserName = $user.SamAccountName
+            GroupName = $groupName
+        }
+    }
+}
+
+# Export the results to a CSV file
+$results | Export-Csv -Path $csvPath -NoTypeInformation
+
+Write-Host "Group memberships exported to $csvPath"
