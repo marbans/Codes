@@ -1,0 +1,14 @@
+#Directory: C:\WINDOWS\system32\Demo Certificate
+
+#allow execution of policy
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+
+if (-not (Test-Path "Demo Certificate"))  { New-Item -ItemType Directory -Force -Path "Demo Certificate" }
+if (Test-Path "Demo Certificate\TempOwner.pfx") { Remove-Item "Demo Certificate\TempOwner.pfx" }
+
+# Generate the Ownership private signing key with password this_password!
+$pw = ConvertTo-SecureString "this_password!" -AsPlainText -Force
+
+$TestUefiV2 = New-SelfSignedCertificate -Subject "CN=Surface Demo Kit, O=Contoso Corporation, C=US" -Type SSLServerAuthentication -HashAlgorithm sha256 -KeyAlgorithm RSA -KeyLength 2048 -KeyUsage KeyEncipherment -KeyUsageProperty All -Provider "Microsoft Enhanced RSA and AES Cryptographic Provider" -NotAfter (Get-Date).AddYears(25) -TextExtension @("2.5.29.37={text}1.2.840.113549.1.1.1") -KeyExportPolicy Exportable
+
+$TestUefiV2 | Export-PfxCertificate -Password $pw -FilePath "Demo Certificate\TempOwner.pfx"
