@@ -1,3 +1,4 @@
+//This script is used for Googe AppScript Editor
 function onOpen() {
   const ui = SpreadsheetApp.getUi();
   const menu = ui.createMenu('Create Guide For Student');
