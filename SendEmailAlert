@@ -1,0 +1,49 @@
+// Save this as .ps1 file on the computer //
+
+$SMTPServer = "smtp.gmail.com"
+$SMTPPort = 587
+$Username = "yourname@gmail.com"
+$Password = "your_app_password"
+
+$Message = New-Object System.Net.Mail.MailMessage
+$Message.From = "yourname@gmail.com"
+$Message.To.Add("recipient@example.com")
+$Message.Subject = "Test Email"
+$Message.Body = "This is a test email."
+
+$SMTP = New-Object Net.Mail.SmtpClient($SMTPServer, $SMTPPort)
+$SMTP.EnableSsl = $true
+$SMTP.Credentials = New-Object System.Net.NetworkCredential($Username, $Password)
+$SMTP.Send($Message)
+
+Write-Output "Email Sent Successfully!"
+
+
+// Use this XML as custom filter to trigger //
+// whenever a secific user logs in to wifi (to NPS) - put it on Task Scheduler //
+
+<QueryList>
+  <Query Id="0" Path="Security">
+    <Select Path="Security">
+      *[System[(EventID=6272)]]
+      and
+      *[EventData[Data[@Name='SubjectUserName'] and (Data='specific_user')]]
+    </Select>
+  </Query>
+</QueryList>
+
+// Additional config on Task Scheduler //
+
+3. Configure the Action (Send Alert or Run Script)
+Go to the Actions tab → Click New.
+Select Start a Program.
+In Program/script, enter:
+Copy
+Edit
+powershell.exe
+In Add arguments, enter:
+arduino
+Copy
+Edit
+-ExecutionPolicy Bypass -File "C:\Scripts\NPSAlert.ps1"
+ //
