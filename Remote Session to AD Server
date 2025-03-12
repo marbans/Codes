@@ -1,0 +1,6 @@
+Enable-PSRemoting -Force
+Set-Item WSMan:\localhost\Client\TrustedHosts -Value "AD name" -Force
+$Credential = Get-Credential
+Enter-PSSession -ComputerName "AD name" -Credential $Credential
+Import-Module ActiveDirectory
+Get-ADUser -Filter *
