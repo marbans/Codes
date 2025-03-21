@@ -1,0 +1,61 @@
+import socket
+import json
+from datetime import datetime
+
+# Configuration
+HOST = "0.0.0.0"  # Listen on all interfaces
+PORT = 5000       # Change this to match your PBX SMDR output port
+LOG_FILE = "Call_Data_Records_log.txt"
+
+
+
+# Function to parse a single SMDR log entry
+def parse_smdr(data):
+    fields = data.strip().split(",")  # Split using commas
+    
+    if len(fields) < 15:  # Ensure valid log format
+        return None
+
+    parsed_data = {
+        "Date & Time": fields[0] if len(fields) > 0 else "",
+        "Duration": fields[1] if len(fields) > 1 else "",
+        "Ext": fields[2] if len(fields) > 2 else "",
+        "Caller ID": fields[3] if len(fields) > 3 else "",
+        "Type": "Outgoing" if fields[4] == "O" else "Incoming",
+        "Dialed Number": fields[5] if len(fields) > 5 else "",
+        "Connected To": fields[6] if len(fields) > 6 else "",
+        "Caller Name": fields[12] if len(fields) > 12 else "",
+        "Receiver Name": fields[14] if len(fields) > 14 else "",
+        "Call Result": fields[9] if len(fields) > 9 else "",
+    }
+    return parsed_data
+
+
+
+def log_smdr(data):
+    """Logs SMDR data to a file"""
+    with open(LOG_FILE, "a") as f:
+        f.write(json.dumps(data) + "\n")
+
+def start_smdr_receiver():
+    """Starts a TCP server to receive SMDR data from Avaya PBX"""
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
+        server_socket.bind((HOST, PORT))
+        server_socket.listen(5)
+        print(f"Listening for SMDR data on port {PORT}...")
+
+        while True:
+            conn, addr = server_socket.accept()
+            with conn:
+                print(f"Connection from {addr}")
+                while True:
+                    data = conn.recv(1024)
+                    if not data:
+                        break
+                    decoded_data = data.decode("utf-8").strip()
+                    print(f"Received: {decoded_data}")
+                    smdr_record = parse_smdr(decoded_data)
+                    log_smdr(smdr_record)
+
+if __name__ == "__main__":
+    start_smdr_receiver()
