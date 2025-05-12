@@ -2,7 +2,9 @@ function listDriveFolderTree() {
   const folderId = Browser.inputBox("Enter Google Drive Folder ID"); // Prompt user for ID - the string after "https://drive.google.com/drive/folders/string
   const folder = DriveApp.getFolderById(folderId);
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  
+
+// paste this code on Google Sheets>Extensions>Apps Script Editor and Run
+
   sheet.clearContents();
   sheet.appendRow(['Name', 'Type', 'URL', 'Path']);
 
