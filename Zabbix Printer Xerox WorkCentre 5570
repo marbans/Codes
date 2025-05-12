@@ -1,0 +1,1262 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<zabbix_export>
+<version>7.0</version>
+<template_groups>
+<template_group>
+<uuid>60f1dce8720d41eab748470cd7d4746e</uuid>
+<name>Printers</name>
+</template_group>
+<template_group>
+<uuid>7df96b18c230490a9a0a9e2307226338</uuid>
+<name>Templates</name>
+</template_group>
+</template_groups>
+<templates>
+<template>
+<uuid>347d453f5ba542ef96c01f76268f8691</uuid>
+<template>Printer Xerox WorkCentre 5570 StAug</template>
+<name>Printer Xerox WorkCentre 5570 StAug</name>
+<description>Cloned from 7220 downloaded ## Overview I upgraded older version Xerox template 7225. Its orchestrated with template Grafana. Zabbix apliance 3.4.12 [Dasboard Geafana Xerox 7220](https://grafana.com/api/dashboards/8369/revisions/1/download)</description>
+<groups>
+<group>
+<name>Printers</name>
+</group>
+<group>
+<name>Templates</name>
+</group>
+</groups>
+<items>
+<item>
+<uuid>822caec9ea1a499795148670b18972d5</uuid>
+<name>Cartridge toner level % - black</name>
+<type>CALCULATED</type>
+<key>black.cartridge.toner</key>
+<delay>60</delay>
+<history>7d</history>
+<units>%</units>
+<params>100*last(//ink.black.now)/last(//ink.black.max)</params>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Consumables level %</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>607030a7e42c4f698e61442ab439b638</uuid>
+<name>Type of cartridge - black</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.11.1.1.6.1.1</snmp_oid>
+<key>black.cartridge.type</key>
+<delay>60</delay>
+<history>7d</history>
+<value_type>TEXT</value_type>
+<trends>0</trends>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Printer information</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>4029a927419b4bcda507badecc9fa4c9</uuid>
+<name>Type of drum - black</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.11.1.1.6.1.5</snmp_oid>
+<key>black.drum.type</key>
+<delay>60</delay>
+<history>7d</history>
+<value_type>TEXT</value_type>
+<trends>0</trends>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Printer information</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>391496fbaa9e45f8985b9d23b94ea35b</uuid>
+<name>Cartridge toner level % - Yellow_new</name>
+<type>CALCULATED</type>
+<key>cyan.cartridge.toner</key>
+<delay>60</delay>
+<history>7d</history>
+<units>%</units>
+<params>100*last(//ink.cyan.now)/last(//ink.cyan.max)</params>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Consumables level %</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>6e9c00bc0454446f9f968de87dd3847f</uuid>
+<name>Type of cartridge - cyan</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.11.1.1.6.1.2</snmp_oid>
+<key>cyan.cartridge.type</key>
+<delay>60</delay>
+<history>7d</history>
+<value_type>TEXT</value_type>
+<trends>0</trends>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Printer information</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>955b2e6162444bc79d49ded11d3c7248</uuid>
+<name>Type of drum - cyan</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.11.1.1.6.1.6</snmp_oid>
+<key>cyan.drum.type</key>
+<delay>21600</delay>
+<history>7d</history>
+<value_type>TEXT</value_type>
+<trends>0</trends>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Printer information</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>73c944352fa34b92b3f927e5ba5c0366</uuid>
+<name>Current drum unit level % - black</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.11.1.1.9.1.5</snmp_oid>
+<key>drum.black.now</key>
+<delay>60</delay>
+<history>7d</history>
+<units>%</units>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Consumables level %</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>d17b7ff716bd4862b5eed70b33ad6556</uuid>
+<name>Current drum unit level % - Yellow_new</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>1.3.6.1.2.1.43.11.1.1.9.1.6</snmp_oid>
+<key>drum.cyan.now</key>
+<delay>60</delay>
+<history>7d</history>
+<units>%</units>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Consumables level %</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>ed1608b71d7648a6a11df6e2c7bda45c</uuid>
+<name>Current drum unit level % - magenta</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.11.1.1.9.1.7</snmp_oid>
+<key>drum.magenta.now</key>
+<delay>60</delay>
+<history>7d</history>
+<units>%</units>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Consumables level %</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>5b92d4da6f4c4c17b79c2cce467ca93a</uuid>
+<name>Current drum unit level % - Cyan_new</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.11.1.1.9.1.8</snmp_oid>
+<key>drum.yellow.now</key>
+<delay>60</delay>
+<history>7d</history>
+<units>%</units>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Consumables level %</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>52b1ac15795d497097457920f5fae94f</uuid>
+<name>Fuser %</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.11.1.1.9.1.9</snmp_oid>
+<key>fuser.percent</key>
+<delay>60</delay>
+<history>7d</history>
+<units>%</units>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Consumables level %</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>67b423fb9c7247bb96f6f04fcdde3af0</uuid>
+<name>Max cartridge toner level - black</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.11.1.1.8.1.1</snmp_oid>
+<key>ink.black.max</key>
+<delay>60</delay>
+<history>7d</history>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Consumables level</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>50005d9df9de4832a7f3cf413cda178e</uuid>
+<name>Current cartridge toner level - black</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.11.1.1.9.1.1</snmp_oid>
+<key>ink.black.now</key>
+<delay>60</delay>
+<history>7d</history>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Consumables level</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>ac2af101619845d293c32ba4cecd2c4f</uuid>
+<name>Max cartridge toner level - cyan</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.11.1.1.8.1.2</snmp_oid>
+<key>ink.cyan.max</key>
+<delay>60</delay>
+<history>7d</history>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Consumables level</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>5ceeaf9748d641fc834f0d7c1a7d768e</uuid>
+<name>Current cartridge toner level - Yellow_new</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.11.1.1.9.1.2</snmp_oid>
+<key>ink.cyan.now</key>
+<delay>60</delay>
+<history>7d</history>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Consumables level</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>b11830d466994d81baa25b6e6259ae36</uuid>
+<name>Max cartridge toner level - magenta</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.11.1.1.8.1.3</snmp_oid>
+<key>ink.magenta.max</key>
+<delay>60</delay>
+<history>7d</history>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Consumables level</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>91f6c0a720a94499a8c4a24da15e06de</uuid>
+<name>Current cartridge toner level - magenta</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.11.1.1.9.1.3</snmp_oid>
+<key>ink.magenta.now</key>
+<delay>60</delay>
+<history>7d</history>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Consumables level</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>710a3404ba1e4e188924624e51ec8bfb</uuid>
+<name>Max cartridge toner level - yellow</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.11.1.1.8.1.4</snmp_oid>
+<key>ink.yellow.max</key>
+<delay>60</delay>
+<history>7d</history>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Consumables level</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>4d73fce8c21f46ad9b66405540c3d774</uuid>
+<name>Current cartridge toner level - Cyan_new</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.11.1.1.9.1.4</snmp_oid>
+<key>ink.yellow.now</key>
+<delay>60</delay>
+<history>7d</history>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Consumables level</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>ad412b5727504237ab88955c50eeebfe</uuid>
+<name>Cartridge toner level % - magenta</name>
+<type>CALCULATED</type>
+<key>magenta.cartridge.toner</key>
+<delay>60</delay>
+<history>7d</history>
+<units>%</units>
+<params>100*last(//ink.magenta.now)/last(//ink.magenta.max)</params>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Consumables level %</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>849a653457824077a78d2dbb3c7870f4</uuid>
+<name>Type of cartridge - magenta</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.11.1.1.6.1.3</snmp_oid>
+<key>magenta.cartridge.type</key>
+<delay>21600</delay>
+<history>7d</history>
+<value_type>TEXT</value_type>
+<trends>0</trends>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Printer information</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>582fa087ae9e47d0be3f69bec1980eb2</uuid>
+<name>Type of drum - magenta</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.11.1.1.6.1.7</snmp_oid>
+<key>magenta.drum.type</key>
+<delay>21600</delay>
+<history>7d</history>
+<value_type>TEXT</value_type>
+<trends>0</trends>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Printer information</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>1411e394a8a14899a52ba56679acdf13</uuid>
+<name>Printer model</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.1.5.0</snmp_oid>
+<key>model</key>
+<delay>60</delay>
+<history>7d</history>
+<value_type>TEXT</value_type>
+<trends>0</trends>
+<inventory_link>TYPE</inventory_link>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Printer information</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>67bdeed6716449eb840195a557d3beef</uuid>
+<name>Pages printed - black</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.4.1.253.8.53.13.2.1.6.1.20.34</snmp_oid>
+<key>pages.printed.black</key>
+<delay>60</delay>
+<history>30d</history>
+<value_type>TEXT</value_type>
+<trends>0</trends>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Pages printed</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>6577b1072d684b6582502377bce0a163</uuid>
+<name>Pages printed - color</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.4.1.253.8.53.13.2.1.6.1.20.33</snmp_oid>
+<key>pages.printed.color</key>
+<delay>60</delay>
+<history>30d</history>
+<value_type>TEXT</value_type>
+<trends>0</trends>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Pages printed</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>3298003bd80342019619b65ea46720f4</uuid>
+<name>Pages printed - total</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.4.1.253.8.53.13.2.1.6.1.20.1</snmp_oid>
+<key>pages.printed.total</key>
+<delay>60</delay>
+<history>30d</history>
+<value_type>TEXT</value_type>
+<trends>0</trends>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Pages printed</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>f6b75ef87c164ef0ba9253887b8d6d8c</uuid>
+<name>Printer location</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>1.3.6.1.2.1.1.6.0</snmp_oid>
+<key>printer.location</key>
+<delay>60</delay>
+<history>7d</history>
+<value_type>TEXT</value_type>
+<trends>0</trends>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Printer information</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>4918263dee5748e49135fdfc624bda18</uuid>
+<name>Printer System Notification</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.16.5.1.2.1.1</snmp_oid>
+<key>printer.notification</key>
+<delay>3h</delay>
+<history>7d</history>
+<value_type>TEXT</value_type>
+<trends>0</trends>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Printer information</value>
+</tag>
+</tags>
+<triggers>
+<trigger>
+<uuid>ea8d567a648f4c25b804238cb5d93ca1</uuid>
+<expression>length(last(/Printer Xerox WorkCentre 5570 StAug/printer.notification))>0</expression>
+<name>Printer System Notification</name>
+<priority>INFO</priority>
+<manual_close>YES</manual_close>
+</trigger>
+</triggers>
+</item>
+<item>
+<uuid>06acc1f9dc6f41b6aa53c6674db6d791</uuid>
+<name>Up Time</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>1.3.6.1.2.1.1.3.0</snmp_oid>
+<key>printer.uptime</key>
+<delay>60</delay>
+<history>7d</history>
+<units>uptime</units>
+<preprocessing>
+<step>
+<type>MULTIPLIER</type>
+<parameters>
+<parameter>0.01</parameter>
+</parameters>
+</step>
+</preprocessing>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Printer information</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>fc88918fedee4c9995212f3ce3ded67c</uuid>
+<name>Second Bias Transfer Roller %</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.11.1.1.9.1.12</snmp_oid>
+<key>second.btr.transfer.roller.percent</key>
+<delay>60</delay>
+<history>7d</history>
+<units>%</units>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Consumables level %</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>6b31978a577e47148ffc6e435c77aa83</uuid>
+<name>Serial number</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>1.3.6.1.2.1.43.5.1.1.17.1</snmp_oid>
+<key>serial.number</key>
+<delay>60</delay>
+<history>7d</history>
+<value_type>TEXT</value_type>
+<trends>0</trends>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Printer information</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>6f08aa776a0446a597fecf85ecfabfd3</uuid>
+<name>Transfer Belt Cleaner %</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.11.1.1.9.1.11</snmp_oid>
+<key>transfer.belt.cleaner.percent</key>
+<delay>60</delay>
+<history>7d</history>
+<units>%</units>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Consumables level %</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>391bf933c27843dcbc6b4027ec1540cf</uuid>
+<name>Tray 1 - Media current level</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.8.2.1.10.1.1</snmp_oid>
+<key>tray.1.media.current.level</key>
+<delay>60</delay>
+<history>7d</history>
+<units>V</units>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Printer information</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>cea2958684f544898301ec1fde2312dd</uuid>
+<name>Tray 1 - Media name</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.8.2.1.12.1.1</snmp_oid>
+<key>tray.1.media.name</key>
+<delay>300</delay>
+<history>7d</history>
+<value_type>TEXT</value_type>
+<trends>0</trends>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Printer information</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>e54405f3cf8f4ac2b57c77b561ec00cb</uuid>
+<name>Tray 2 - Media current level</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.8.2.1.10.1.2</snmp_oid>
+<key>tray.2.media.current.level</key>
+<delay>60</delay>
+<history>7d</history>
+<units>V</units>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Printer information</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>d98cc0421e4e4fd3970da6abf12f5ee2</uuid>
+<name>Tray 2 - Media name</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.8.2.1.12.1.2</snmp_oid>
+<key>tray.2.media.name</key>
+<delay>300</delay>
+<history>7d</history>
+<value_type>TEXT</value_type>
+<trends>0</trends>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Printer information</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>92ad41cac5884a77b387efbf5a3fa009</uuid>
+<name>Tray 5 manual - Media current level</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.8.2.1.10.1.3</snmp_oid>
+<key>tray.5.manual.media.current.level</key>
+<delay>60</delay>
+<history>7d</history>
+<units>V</units>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Printer information</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>73168b44010545648d407ee3d7a17ffb</uuid>
+<name>Tray 5 manual - Media name</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.8.2.1.12.1.3</snmp_oid>
+<key>tray.5.manual.media.name</key>
+<delay>300</delay>
+<history>7d</history>
+<value_type>TEXT</value_type>
+<trends>0</trends>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Printer information</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>8d0eab0515534d27bc08f87baf0e213b</uuid>
+<name>Up Time Clear</name>
+<type>CALCULATED</type>
+<key>up.time.Clear</key>
+<delay>60</delay>
+<history>7d</history>
+<units>s</units>
+<params>last(//printer.uptime)/100</params>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Printer information</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>4b0e8bc222944ed8a3bb8d4f67d689ca</uuid>
+<name>Waste Toner Container %</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.11.1.1.9.1.10</snmp_oid>
+<key>waste.toner.container.percent</key>
+<delay>60</delay>
+<history>7d</history>
+<units>%</units>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Consumables level %</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>f07587629b7f464e9b5f06c2532d84e6</uuid>
+<name>Cartridge toner level % - Cyan_new</name>
+<type>CALCULATED</type>
+<key>yellow.cartridge.toner</key>
+<delay>60</delay>
+<history>7d</history>
+<units>%</units>
+<params>100*last(//ink.yellow.now)/last(//ink.yellow.max)</params>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Consumables level %</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>e18acb07f2a24c12abaa80356511f5f6</uuid>
+<name>Type of cartridge - yellow</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.11.1.1.6.1.4</snmp_oid>
+<key>yellow.cartridge.type</key>
+<delay>21600</delay>
+<history>7d</history>
+<value_type>TEXT</value_type>
+<trends>0</trends>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Printer information</value>
+</tag>
+</tags>
+</item>
+<item>
+<uuid>2baa5e8903144700b7403c5b93bbd477</uuid>
+<name>Type of drum - yellow</name>
+<type>SNMP_AGENT</type>
+<snmp_oid>.1.3.6.1.2.1.43.11.1.1.6.1.8</snmp_oid>
+<key>yellow.drum.type</key>
+<delay>21600</delay>
+<history>7d</history>
+<value_type>TEXT</value_type>
+<trends>0</trends>
+<tags>
+<tag>
+<tag>Application</tag>
+<value>Printer information</value>
+</tag>
+</tags>
+</item>
+</items>
+<dashboards>
+<dashboard>
+<uuid>d8e13e21cf6944be9935467d00d224b6</uuid>
+<name>Toner level</name>
+<pages>
+<page>
+<widgets>
+<widget>
+<type>itemhistory</type>
+<width>18</width>
+<fields>
+<field>
+<type>ITEM</type>
+<name>columns.1.itemid</name>
+<value>
+<host>Printer Xerox WorkCentre 5570 StAug</host>
+<key>black.cartridge.type</key>
+</value>
+</field>
+<field>
+<type>INTEGER</type>
+<name>columns.1.monospace_font</name>
+<value>1</value>
+</field>
+<field>
+<type>STRING</type>
+<name>columns.1.name</name>
+<value>Type of cartridge - black</value>
+</field>
+<field>
+<type>STRING</type>
+<name>reference</name>
+<value>AAAAA</value>
+</field>
+<field>
+<type>INTEGER</type>
+<name>show_as_html</name>
+<value>0</value>
+</field>
+<field>
+<type>INTEGER</type>
+<name>show_lines</name>
+<value>1</value>
+</field>
+<field>
+<type>INTEGER</type>
+<name>show_timestamp</name>
+<value>1</value>
+</field>
+</fields>
+</widget>
+<widget>
+<type>graph</type>
+<y>2</y>
+<width>18</width>
+<height>6</height>
+<fields>
+<field>
+<type>GRAPH</type>
+<name>graphid</name>
+<value>
+<host>Printer Xerox WorkCentre 5570 StAug</host>
+<name>Black toner level</name>
+</value>
+</field>
+<field>
+<type>STRING</type>
+<name>reference</name>
+<value>AAAAE</value>
+</field>
+<field>
+<type>INTEGER</type>
+<name>source_type</name>
+<value>0</value>
+</field>
+</fields>
+</widget>
+<widget>
+<type>itemhistory</type>
+<x>18</x>
+<width>18</width>
+<fields>
+<field>
+<type>ITEM</type>
+<name>columns.4.itemid</name>
+<value>
+<host>Printer Xerox WorkCentre 5570 StAug</host>
+<key>cyan.cartridge.type</key>
+</value>
+</field>
+<field>
+<type>INTEGER</type>
+<name>columns.4.monospace_font</name>
+<value>1</value>
+</field>
+<field>
+<type>STRING</type>
+<name>columns.4.name</name>
+<value>Type of cartridge - cyan</value>
+</field>
+<field>
+<type>STRING</type>
+<name>reference</name>
+<value>AAAAB</value>
+</field>
+<field>
+<type>INTEGER</type>
+<name>show_as_html</name>
+<value>0</value>
+</field>
+<field>
+<type>INTEGER</type>
+<name>show_lines</name>
+<value>1</value>
+</field>
+<field>
+<type>INTEGER</type>
+<name>show_timestamp</name>
+<value>1</value>
+</field>
+</fields>
+</widget>
+<widget>
+<type>graph</type>
+<x>18</x>
+<y>2</y>
+<width>18</width>
+<height>6</height>
+<fields>
+<field>
+<type>GRAPH</type>
+<name>graphid</name>
+<value>
+<host>Printer Xerox WorkCentre 5570 StAug</host>
+<name>Cyan toner level</name>
+</value>
+</field>
+<field>
+<type>STRING</type>
+<name>reference</name>
+<value>AAAAF</value>
+</field>
+<field>
+<type>INTEGER</type>
+<name>source_type</name>
+<value>0</value>
+</field>
+</fields>
+</widget>
+<widget>
+<type>itemhistory</type>
+<x>36</x>
+<width>18</width>
+<fields>
+<field>
+<type>ITEM</type>
+<name>columns.20.itemid</name>
+<value>
+<host>Printer Xerox WorkCentre 5570 StAug</host>
+<key>magenta.cartridge.type</key>
+</value>
+</field>
+<field>
+<type>INTEGER</type>
+<name>columns.20.monospace_font</name>
+<value>1</value>
+</field>
+<field>
+<type>STRING</type>
+<name>columns.20.name</name>
+<value>Type of cartridge - magenta</value>
+</field>
+<field>
+<type>STRING</type>
+<name>reference</name>
+<value>AAAAC</value>
+</field>
+<field>
+<type>INTEGER</type>
+<name>show_as_html</name>
+<value>0</value>
+</field>
+<field>
+<type>INTEGER</type>
+<name>show_lines</name>
+<value>1</value>
+</field>
+<field>
+<type>INTEGER</type>
+<name>show_timestamp</name>
+<value>1</value>
+</field>
+</fields>
+</widget>
+<widget>
+<type>graph</type>
+<x>36</x>
+<y>2</y>
+<width>18</width>
+<height>6</height>
+<fields>
+<field>
+<type>GRAPH</type>
+<name>graphid</name>
+<value>
+<host>Printer Xerox WorkCentre 5570 StAug</host>
+<name>Magenta toner level</name>
+</value>
+</field>
+<field>
+<type>STRING</type>
+<name>reference</name>
+<value>AAAAG</value>
+</field>
+<field>
+<type>INTEGER</type>
+<name>source_type</name>
+<value>0</value>
+</field>
+</fields>
+</widget>
+<widget>
+<type>itemhistory</type>
+<x>54</x>
+<width>18</width>
+<fields>
+<field>
+<type>ITEM</type>
+<name>columns.40.itemid</name>
+<value>
+<host>Printer Xerox WorkCentre 5570 StAug</host>
+<key>yellow.cartridge.type</key>
+</value>
+</field>
+<field>
+<type>INTEGER</type>
+<name>columns.40.monospace_font</name>
+<value>1</value>
+</field>
+<field>
+<type>STRING</type>
+<name>columns.40.name</name>
+<value>Type of cartridge - yellow</value>
+</field>
+<field>
+<type>STRING</type>
+<name>reference</name>
+<value>AAAAD</value>
+</field>
+<field>
+<type>INTEGER</type>
+<name>show_as_html</name>
+<value>0</value>
+</field>
+<field>
+<type>INTEGER</type>
+<name>show_lines</name>
+<value>1</value>
+</field>
+<field>
+<type>INTEGER</type>
+<name>show_timestamp</name>
+<value>1</value>
+</field>
+</fields>
+</widget>
+<widget>
+<type>graph</type>
+<x>54</x>
+<y>2</y>
+<width>18</width>
+<height>6</height>
+<fields>
+<field>
+<type>GRAPH</type>
+<name>graphid</name>
+<value>
+<host>Printer Xerox WorkCentre 5570 StAug</host>
+<name>Yellow toner level</name>
+</value>
+</field>
+<field>
+<type>STRING</type>
+<name>reference</name>
+<value>AAAAH</value>
+</field>
+<field>
+<type>INTEGER</type>
+<name>source_type</name>
+<value>0</value>
+</field>
+</fields>
+</widget>
+</widgets>
+</page>
+</pages>
+</dashboard>
+</dashboards>
+</template>
+</templates>
+<triggers>
+<trigger>
+<uuid>1ba7f35dafef4a278df9858684a0613c</uuid>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/black.cartridge.toner)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/black.cartridge.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+<name>Empty cartridge toner - black</name>
+<priority>HIGH</priority>
+</trigger>
+<trigger>
+<uuid>cf226b795600463ead496cfe4927f4c7</uuid>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/yellow.cartridge.toner)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/yellow.cartridge.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+<name>Empty cartridge toner - Cyan</name>
+<priority>HIGH</priority>
+</trigger>
+<trigger>
+<uuid>869d53aee1e94d6bb3e24d2847d0178f</uuid>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/magenta.cartridge.toner)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/magenta.cartridge.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+<name>Empty cartridge toner - magenta</name>
+<priority>HIGH</priority>
+</trigger>
+<trigger>
+<uuid>f794917cb54246a1a4ddc48068b01d32</uuid>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/cyan.cartridge.toner)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/cyan.cartridge.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+<name>Empty cartridge toner - Yellow</name>
+<priority>HIGH</priority>
+</trigger>
+<trigger>
+<uuid>226683f1e2d645359c13fd2b968725aa</uuid>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/drum.black.now)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/black.drum.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+<name>Empty drum toner - black</name>
+<priority>HIGH</priority>
+</trigger>
+<trigger>
+<uuid>82fef0c27c21486295e8e8e3ed52a459</uuid>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/drum.cyan.now)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/cyan.drum.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+<name>Empty drum toner - cyan</name>
+<priority>HIGH</priority>
+</trigger>
+<trigger>
+<uuid>8c54d305b6e34642897e96e6039cc62c</uuid>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/drum.magenta.now)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/magenta.drum.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+<name>Empty drum toner - magenta</name>
+<priority>HIGH</priority>
+</trigger>
+<trigger>
+<uuid>b3d9f786c3a14a9e9b80257fea7b1f35</uuid>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/drum.yellow.now)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/yellow.drum.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+<name>Empty drum toner - yellow</name>
+<priority>HIGH</priority>
+</trigger>
+<trigger>
+<uuid>c569e1f9b78e456593a2ff93be885e7a</uuid>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/black.cartridge.toner)<10 and nodata(/Printer Xerox WorkCentre 5570 StAug/black.cartridge.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+<name>Low cartridge toner - black</name>
+<priority>WARNING</priority>
+<dependencies>
+<dependency>
+<name>Empty cartridge toner - black</name>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/black.cartridge.toner)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/black.cartridge.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+</dependency>
+</dependencies>
+</trigger>
+<trigger>
+<uuid>4feda2e437464dec974aa0ef3e0ba055</uuid>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/yellow.cartridge.toner)<10 and nodata(/Printer Xerox WorkCentre 5570 StAug/yellow.cartridge.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+<name>Low cartridge toner - Cyan</name>
+<priority>WARNING</priority>
+<dependencies>
+<dependency>
+<name>Empty cartridge toner - Cyan</name>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/yellow.cartridge.toner)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/yellow.cartridge.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+</dependency>
+</dependencies>
+</trigger>
+<trigger>
+<uuid>4d2df205020e49f88270d2e874cfb568</uuid>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/magenta.cartridge.toner)<10 and nodata(/Printer Xerox WorkCentre 5570 StAug/magenta.cartridge.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+<name>Low cartridge toner - magenta</name>
+<priority>WARNING</priority>
+<dependencies>
+<dependency>
+<name>Empty cartridge toner - magenta</name>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/magenta.cartridge.toner)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/magenta.cartridge.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+</dependency>
+</dependencies>
+</trigger>
+<trigger>
+<uuid>763d4933e10c4881ad2c7677102ccaaf</uuid>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/cyan.cartridge.toner)<10 and nodata(/Printer Xerox WorkCentre 5570 StAug/cyan.cartridge.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+<name>Low cartridge toner - Yellow</name>
+<priority>WARNING</priority>
+<dependencies>
+<dependency>
+<name>Empty cartridge toner - Yellow</name>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/cyan.cartridge.toner)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/cyan.cartridge.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+</dependency>
+</dependencies>
+</trigger>
+<trigger>
+<uuid>11bfe801360946e79af6e29f01362744</uuid>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/drum.black.now)<20 and nodata(/Printer Xerox WorkCentre 5570 StAug/black.drum.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+<name>Low drum toner - black</name>
+<priority>INFO</priority>
+<dependencies>
+<dependency>
+<name>Empty drum toner - black</name>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/drum.black.now)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/black.drum.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+</dependency>
+</dependencies>
+</trigger>
+<trigger>
+<uuid>d6ac50cf3f2d4e429a9a5745f4d80c51</uuid>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/drum.cyan.now)<20 and nodata(/Printer Xerox WorkCentre 5570 StAug/cyan.drum.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+<name>Low drum toner - cyan</name>
+<priority>INFO</priority>
+<dependencies>
+<dependency>
+<name>Empty drum toner - cyan</name>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/drum.cyan.now)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/cyan.drum.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+</dependency>
+</dependencies>
+</trigger>
+<trigger>
+<uuid>c52ec379bd5742b0a5016897b163fc26</uuid>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/drum.magenta.now)<20 and nodata(/Printer Xerox WorkCentre 5570 StAug/magenta.drum.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+<name>Low drum toner - magenta</name>
+<priority>INFO</priority>
+<dependencies>
+<dependency>
+<name>Empty drum toner - magenta</name>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/drum.magenta.now)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/magenta.drum.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+</dependency>
+</dependencies>
+</trigger>
+<trigger>
+<uuid>df487522b2044d898ac80971a945da57</uuid>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/drum.yellow.now)<20 and nodata(/Printer Xerox WorkCentre 5570 StAug/yellow.drum.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+<name>Low drum toner - yellow</name>
+<priority>INFO</priority>
+<dependencies>
+<dependency>
+<name>Empty drum toner - yellow</name>
+<expression>last(/Printer Xerox WorkCentre 5570 StAug/drum.yellow.now)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/yellow.drum.type,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/model,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/printer.location,3w)=0 and nodata(/Printer Xerox WorkCentre 5570 StAug/serial.number,3w)=0</expression>
+</dependency>
+</dependencies>
+</trigger>
+</triggers>
+<graphs>
+<graph>
+<uuid>933936e66954424b95a5c8c207e68992</uuid>
+<name>Black toner level</name>
+<width>200</width>
+<ymin_type_1>FIXED</ymin_type_1>
+<ymax_type_1>FIXED</ymax_type_1>
+<graph_items>
+<graph_item>
+<drawtype>GRADIENT_LINE</drawtype>
+<color>000000</color>
+<item>
+<host>Printer Xerox WorkCentre 5570 StAug</host>
+<key>black.cartridge.toner</key>
+</item>
+</graph_item>
+</graph_items>
+</graph>
+<graph>
+<uuid>0002f232c3f540c2b187345006b82def</uuid>
+<name>Cyan toner level</name>
+<width>200</width>
+<ymin_type_1>FIXED</ymin_type_1>
+<ymax_type_1>FIXED</ymax_type_1>
+<graph_items>
+<graph_item>
+<drawtype>GRADIENT_LINE</drawtype>
+<color>00DDDD</color>
+<item>
+<host>Printer Xerox WorkCentre 5570 StAug</host>
+<key>cyan.cartridge.toner</key>
+</item>
+</graph_item>
+</graph_items>
+</graph>
+<graph>
+<uuid>0325106a52184fe6993e67ce022acd39</uuid>
+<name>Magenta toner level</name>
+<width>200</width>
+<ymin_type_1>FIXED</ymin_type_1>
+<ymax_type_1>FIXED</ymax_type_1>
+<graph_items>
+<graph_item>
+<drawtype>GRADIENT_LINE</drawtype>
+<color>DD00DD</color>
+<item>
+<host>Printer Xerox WorkCentre 5570 StAug</host>
+<key>magenta.cartridge.toner</key>
+</item>
+</graph_item>
+</graph_items>
+</graph>
+<graph>
+<uuid>ec5bbd9613e64c8592f065c1fc638e88</uuid>
+<name>Yellow toner level</name>
+<width>200</width>
+<ymin_type_1>FIXED</ymin_type_1>
+<ymax_type_1>FIXED</ymax_type_1>
+<graph_items>
+<graph_item>
+<drawtype>GRADIENT_LINE</drawtype>
+<color>DDDD00</color>
+<item>
+<host>Printer Xerox WorkCentre 5570 StAug</host>
+<key>yellow.cartridge.toner</key>
+</item>
+</graph_item>
+</graph_items>
+</graph>
+</graphs>
+</zabbix_export>
